@@ -592,7 +592,17 @@
 >
 > **Java 8增强的工具类：`Arrays`**
 >
+> Arrays 类在 java.util 包下，在程序中使用Arrays类，需导入：
+>
+> ```java
+> import java.util.Arrays;
+> ```
+>
 > Java提供的Arrays类里包含的一些 static 修饰的方法可以直接操作数组，这些方法如下（static修饰的方法可以直接通过类名调用）：
+>
+> 数组对应的例子见代码：
+>
+> [arraysTest]:(https://github.com/weily22/Java_Base/blob/master/src/ArrayDemo.java)
 >
 > 1. int binarySearch(type[] a, type key)：
 >    * 使用二分法查询key元素值在a数组中出现的索引；如果a数组不包含key元素值，则返回负数。
@@ -601,6 +611,18 @@
 >    * 如果a数组和a2数组的长度相等，且a数组和a2数组的数组元素也一一相同，改方法将返回true。
 > 3. type[] copyOf(type[] original, int length)：
 >    * 这个方法会把original数组复制成一个新数组，其中length是新数组的长度，其中length是新数组的长度。如果 length 小于 origin 数组的长度，则新数组就是原数组的前面length个元素；如果length大于original数组的长度，则新数组的前面元素就是原数组的所有元素，后面补充0（数值类型）、false（布尔类型）或者null（引用类型）
+> 4. type[] copyOfRange(type[] original, int from , int to)：
+>    * 与上一个方法类似，但这个方法只复制original数组的from索引到to索引的元素
+> 5. String toString(type[] a)：
+>    * 该方法将一个数组转换成一个字符串。该方法按顺序把多个数组元素连缀在一起，多个数组元素使用英文逗号（,）和空格隔开
+> 6. void fill(type[] a, type val)：
+>    * 该方法将数组的所有元素都赋值为val
+> 7. void fill(type[] a, int fromIndex, int toIndex, type val)：
+>    * 该方法将a数组的 fromIndex 到 toIndex索引的数组元素赋值为 val
+> 8. void sort (type[] a)：
+>    * 该方法将a数组的数组元素进行排序。
+> 9. void sort (type[] a, int fromIndex, toIndex)：
+>    * 与前一个方法相似，区别是该方法仅仅对fromIndex 到 toIndex 索引的元素进行排序
 >
 >
 >
