@@ -600,9 +600,7 @@
 >
 > Java提供的Arrays类里包含的一些 static 修饰的方法可以直接操作数组，这些方法如下（static修饰的方法可以直接通过类名调用）：
 >
-> 数组对应的例子见代码：
->
-> [arraysTest]:(https://github.com/weily22/Java_Base/blob/master/src/ArrayDemo.java)
+> 数组对应的例子见代码：[arrayTest](https://github.com/weily22/Java_Base/blob/master/src/ArrayDemo.java)
 >
 > 1. int binarySearch(type[] a, type key)：
 >    * 使用二分法查询key元素值在a数组中出现的索引；如果a数组不包含key元素值，则返回负数。
@@ -624,7 +622,41 @@
 > 9. void sort (type[] a, int fromIndex, toIndex)：
 >    * 与前一个方法相似，区别是该方法仅仅对fromIndex 到 toIndex 索引的元素进行排序
 >
+> 除此之外，
 >
+> 在 System 类里也包含了一个 static void arraycopy(Object src, int srcPos, Object dest, int destPos, int length)方法，该方法可以将src数组里的元素值赋给dest数组的元素，其中srcPos指定从src数组的第几个元素开始赋值，length参数指定将src数组的多少个元素值赋给dest数组的元素。
+>
+> ```java
+> 例：
+> // 将b数组中第3个元素开始，取出2个元素赋值给c数组的索引从1开始的元素值
+>  int[] b = {0, 0, 1, 1, 3, 4};
+>  int[] c = {1};
+>  System.arraycopy(b, 2, c, 1, 2);
+>  System.out.println("得到的c数组元素为：" + Arrays.toString(c));
+> 
+> => 
+> // 得到的c数组元素为：[1, 1, 1]
+> ```
+>
+> Java 8 为 Arrays类增加的工具方法。
+>
+> 对应的例子见：[arrayTest2](https://github.com/weily22/Java_Base/blob/master/src/ArrayDemo.java)
+>
+> 1. void parallelSort(type[] a)：
+>    * 该功能与sort()方法类似，只是该方法增强了并行能力，可以利用多CPU并行来提高性能
+> 2. void setAll(type[] array, IntToXxxFunction generator)：
+>    * 该方法使用指定的生成器（generator）为所有的数组元素设置值，该生成器控制数组元素的值得生成算法
+> 3. void parallelSetAll(type[] array, IntToXxxFunction generator )：
+>    * 功能与上一个方法相同，只是改方法增加了并行能力，可以利用多CPU并行来提高性能
+>
+> 数组应用案例：
+>
+> `数字字符串转成汉字字符串，简易版`：见代码：[Num2Rmb](https://github.com/weily22/Java_Base/blob/master/src/Num2Rmb.java)
 >
 > --
 
+> **面向对象**
+>
+>
+>
+> --

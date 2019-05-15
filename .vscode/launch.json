@@ -2,6 +2,12 @@
   "configurations": [
     {
       "type": "java",
+      "name": "CodeLens (Launch) - Num2Rmb",
+      "request": "launch",
+      "mainClass": "Num2Rmb"
+    },
+    {
+      "type": "java",
       "name": "CodeLens (Launch) - ArrayDemo",
       "request": "launch",
       "mainClass": "ArrayDemo"
