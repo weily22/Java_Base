@@ -2,6 +2,54 @@
   "configurations": [
     {
       "type": "java",
+      "name": "CodeLens (Launch) - Overload",
+      "request": "launch",
+      "mainClass": "Overload"
+    },
+    {
+      "type": "java",
+      "name": "CodeLens (Launch) - Recursive",
+      "request": "launch",
+      "mainClass": "Recursive"
+    },
+    {
+      "type": "java",
+      "name": "CodeLens (Launch) - Varargs",
+      "request": "launch",
+      "mainClass": "Varargs"
+    },
+    {
+      "type": "java",
+      "name": "CodeLens (Launch) - Varags",
+      "request": "launch",
+      "mainClass": "Varags"
+    },
+    {
+      "type": "java",
+      "name": "CodeLens (Launch) - ParamFunc",
+      "request": "launch",
+      "mainClass": "ParamFunc"
+    },
+    {
+      "type": "java",
+      "name": "CodeLens (Launch) - ReturnThis",
+      "request": "launch",
+      "mainClass": "ReturnThis"
+    },
+    {
+      "type": "java",
+      "name": "CodeLens (Launch) - Dog",
+      "request": "launch",
+      "mainClass": "Dog"
+    },
+    {
+      "type": "java",
+      "name": "CodeLens (Launch) - Person",
+      "request": "launch",
+      "mainClass": "Person"
+    },
+    {
+      "type": "java",
       "name": "CodeLens (Launch) - Num2Rmb",
       "request": "launch",
       "mainClass": "Num2Rmb"
