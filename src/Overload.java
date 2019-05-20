@@ -10,5 +10,8 @@ public class Overload {
     Overload ol = new Overload();
     ol.test();
     ol.test("小米小米");
+    int a;
+    a = 5;
+    System.out.println("a是：" + a);
   }
 }
