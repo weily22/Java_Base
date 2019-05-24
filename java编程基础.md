@@ -1,6 +1,13 @@
 # java编程基础笔记
 
-> **内存分配 （6个保存数据的地方）**
+> <h2 id="xiaomi">目录</h2>
+>
+> - [java简史](#JS)
+> - [面向对象](#MXDX)
+
+
+
+> 内存分配 （6个保存数据的地方）**
 >
 > * 寄存器（最快，位于处理器内部， 数量有限，由编译器分配）
 > * 堆栈（驻留与常规RAM(随机访问存储器)区域 ，堆栈指针上下移动创建和释放内存， 对象句柄）
@@ -25,7 +32,7 @@
 >
 >
 
-> **·java简史·** 
+> <h4 id="JS">.java简史.</h4>
 >
 > [JDK]: #> "Java SE Development Kit"
 >
@@ -125,7 +132,7 @@
 >
 > --
 
-> **面向对象**
+> <h4 id="MXDX">面向对象</h4>
 >
 > 继承、封装、多态
 >
@@ -1182,6 +1189,93 @@
 > * *java.text*：这个包下包含了一些Java格式化相关的类
 > * *java.sql*：这个包下包含了Java进行JDBC数据库编程的相关类/接口
 > * *java.awt*：这个包下包含了 Swing 图形用户界面编程的相关类/接口，这些类可用于构建平台无关的 GUI 程序。
+>
+> --
+>
+> **构造器**
+>
+> 构造器是一个特殊的方法，这个特殊方法用于创建实例时来执行初始化。
+>
+> 如果程序员没有为java类提供任何构造器，则系统会为这个类提供一个无参数的构造器，这个构造器的执行体为空，不做任何事情。无论如何，Java类至少包含一个构造器。
+>
+> 当创建一个对象时，系统为这个对象的实例变量进行默认初始化，这种默认的初始化把所有基本类型的实例变量设为0（对数值型实例变量）或 false（对布尔型实例变量），把所有引用类型的实例变量设为null。如果想要改变这种默认的初始化，想让系统创建对像时就为该对象的实例变量显示指定初始值，就可以通过构造器来实现。
+>
+> 如果一个类里提供了多个构造器，就形成了构造器的重载。
+>
+> 构造器中可以通过 this 来调用另一个重载构造器
+>
+> --
+>
+> **类的继承**
+>
+> Java 的继承通过 extends 关键字来实现，实现继承的类被称为子类，被继承的类被称为父类，有的也称为基类、超类。
+>
+> Java 的继承具有单继承的特点，即每个类只能有一个直接父类。
+>
+> 如果定义一个Java类时并未显示指定这个类的直接父类，则这个类默认扩展java.lang.Object类。因此，java.lang.Object类是所有类的父类。
+>
+> Java 里子类继承父类的语法格式如下：
+>
+> ```java
+> 修饰符 class SubClass extends SuperClass {
+>     // 类定义部分
+> }
+> ```
+>
+> 例：[完整代码](https://github.com/weily22/Java_Base/blob/master/src/xiaomi/Fruit.java)
+>
+> ```java
+> // Fruit:父类
+> public class Fruit {
+>   public double weight;
+>   public void info() {
+>     System.out.println("我是一个水果！重" + weight + "g!");
+>   }
+> }
+> // Apple：子类
+> public class Apple extends Fruit{
+>   public static void main(String[] args) {
+>     // 创建 apple 对象
+>     Apple a = new Apple();
+>     // Apple对象可以访问Fruit的weight成员变量
+>     a.weight = 100;
+>     a.info();
+>   }
+> }
+> 
+> =>
+> // 我是一个水果！重100.0g!
+> ```
+>
+> **子类重写父类**
+>
+> ```java
+> public class Apple extends Fruit{
+>   // 重写父类的info
+>   public void info() {
+>     System.out.println("哈哈，我是苹果，我的重量是50g!");
+>   }
+>   public static void main(String[] args) {
+>     // 创建 apple 对象
+>     Apple a = new Apple();
+>     // Apple对象可以访问Fruit的weight成员变量
+>     a.weight = 100;
+>     a.info();
+>   }
+> }
+> =>
+> // 哈哈，我是苹果，我的重量是50g!
+> ```
+>
+> 方法的重写要遵循"两同两小一大"规则：
+>
+> "两同"：方法名相同、形参列表相同
+>
+> "两小"：子类方法返回值类型应比父类方法返回值类型更小或相等，子类方法声明抛出的异常类应比父类方法声明抛出的异常类更小或相等
+>
+> "一大"：子类方法的访问权限应比父类方法的访问权限更大或相等
+>
+>
 >
 > --
 >

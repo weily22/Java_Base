@@ -2,6 +2,12 @@
   "configurations": [
     {
       "type": "java",
+      "name": "CodeLens (Launch) - Apple",
+      "request": "launch",
+      "mainClass": "xiaomi.Apple"
+    },
+    {
+      "type": "java",
       "name": "CodeLens (Launch) - Overload",
       "request": "launch",
       "mainClass": "Overload"
