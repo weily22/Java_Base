@@ -1277,6 +1277,151 @@
 >
 >
 >
+> 当子类覆盖父类的方法后：
+>
+> 子类对象就不能访问父类被覆盖的方法了，但可以使用 super (被覆盖的实例方法) 或者 父类类名（被覆盖的类方法）作为调用者来调用父类中被覆盖的方法
+>
+> 如果父类方法具有private 访问权限，则该方法对其子类是隐藏的，因此其子类无法访问该方法，也就是无法重写该方法。
+>
+> 方法重载和方法重写：overload 和 override
+>
+> 重载主要放在同一个类的多个同名方法之间
+>
+> 重写的话发生在子类和父类的同名方法之间
+>
+> 当然，父类方法和子类方法也有可能发生重载
+>
 > --
 >
+> *super*： 
 >
+> * 子类方法中调用父类被覆盖的实例方法，则可以使用super限定来调用父类被覆盖的实例方法。
+> * 子类方法中调用父类被覆盖的实例变量，同理，super.var ( var：变量名)
+>
+> [具体代码点这](https://github.com/weily22/Java_Base/blob/master/src/xiaomi/Apple.java)
+>
+> ```java
+> public void info() {
+>   System.out.println("子方法：哈哈，我是苹果，我的重量是50g!");
+>     // 调用父类被覆盖的实例方法
+>     super.info();
+> }
+> 
+> =>
+> // 子方法：哈哈，我是苹果，我的重量是50g!
+> // 父方法：我是一个水果！重100.0g!
+> ```
+>
+> 使用super调用和使用this调用构造器的区别在于：
+>
+> super 调用的是其父亲的构造器，而this调用的是同一个类中重载的构造器。
+>
+> 子类构造器总会调用父类构造器一次：
+>
+> 1. 子类构造器执行体的第一行使用 super 显示调用父类构造器，系统将根据super 调用里传入的实参列表调用父类对应的构造器
+> 2. 子类构造器执行体的第一行代码使用 this 显示调用本类中重载的构造器，系统将根据 this 调用传入的实参列表调用本类中的另一个构造器
+> 3. 子类构造器执行体中既没有 super 调用，也没有 this 调用，系统将会在执行子类构造器之前，隐式调用父类无参数的构造器。
+>
+> [案例](https://github.com/weily22/Java_Base/blob/master/src/xiaomi/Wolf.java)
+>
+> --
+>
+> 创建任何 Java 对象，最先执行的总是 java.lang.Object 类的构造器
+>
+> **多态**
+>
+> Java 引用变量有两个类型：
+>
+> 一个是编译时类型，一个是运行时类型
+>
+> 编译时类型由声明该变量时使用的类型决定，运行时类型由实际赋给变量的对象决定。
+>
+> 如果编译时类型和运行时类型不一致，就可能出现所谓的多态。
+>
+> ```java
+> class BaseClass {
+>   public int book = 6;
+>   public void base() {
+>     System.out.println("父类的普通方法");
+>   }
+>   public void test() {
+>     System.out.println("父类的被覆盖的方法");
+>   }
+> }
+> class SubClass extends BaseClass {
+>   public String book = "西欧阿米";
+>   public void test() {
+>     System.out.println("子类覆盖父类的方法");
+>   }
+>   public void sub () {
+>     System.out.println("子类的普通方法");
+>   }
+>   public static void main (String[] args) {
+>     BaseClass bc = new BaseClass();
+>     System.out.println("BaseClass实例对象调用book: " +  bc.book);
+>     bc.base();
+>     bc.test();
+>     SubClass sc = new SubClass();
+>     System.out.println("SubClass实例对象调用book: " +  sc.book);
+>     sc.base();
+>     sc.test();
+>     BaseClass polymophicBc = new SubClass();
+>     System.out.println("编译时类型BaseClass，运行时类型是SubClass，实例对象调用book: " +  polymophicBc.book);
+>     polymophicBc.base();
+>     polymophicBc.test();
+>   
+>   }
+> }
+> 
+> 
+> =>
+> // BaseClass实例对象调用book: 6
+> // 父类的普通方法
+> // 父类的被覆盖的方法
+> // SubClass实例对象调用book: 西欧阿米
+> // 父类的普通方法
+> // 子类覆盖父类的方法
+> // 编译时类型BaseClass，运行时类型是SubClass，实例对象调用book: 6
+> // 父类的普通方法
+> // 子类覆盖父类的方法
+> 
+> ```
+>
+> Java 允许把一个子类对象直接赋给一个父类引用变量，无须任何类型转换。或者被称为向上转型
+>
+> 当把一个子类对象直接赋给父类引用变量时，如上面的 `BaseClass polymophicBc = new SubClass()`
+>
+> 这个polymophicBc引用变量的编译时类型是 BaseClass，而运行时类型是 SubClass , 当运行时调用该引用变量的方法时，其方法行为总是表现出子类方法的行为特征，而不是父类方法的行为特征，这就可能出现：
+>
+> 相同类型的变量，调用同一个方法时呈现出多种不同的行为特征，这就是多态
+>
+> 与方法不同的是，对象的实例变量则不具备多态性
+>
+> 编写代码时，引用变量只能调用声明该变量时所用类里包含的方法，例如：
+>
+> 通过 Object p = new Person();代码定义一个变量 p，则这个 p 只能调用 Object 类的方法，而不能调用 Person 类里定义的方法。
+>
+> 通过引用变量来访问其包含的实例变量时，系统总是试图访问它编译时类型所定义的成员变量，而不是它运行时类型所定义的成员变量
+>
+> **引用变量的强制类型转换**
+>
+> 因为引用变量只能调用它编译时类型的方法，而不能调用它运行时类型的方法。如果需要让这个变量调用它运行时类型的方法，则必须把强制类型转换成运行时类型，强制类型转换需要借助于类型转换运算符：
+>
+> 类型转换运算符是小括号，用法：(type) varible
+>
+> 即，将 varible 变量转换成一个 type 类型的变量
+>
+> 类型转换运算符可以将一个引用类型变量转换成其子类类型
+>
+> * 引用类型之间的转换只能在具有继承关系的两个类型之间进行
+>
+> 可以使用 instanceof 运算符判断是否可以转换, 前一个对象是否是后一个类的实例
+>
+> `引用类型变量 instanceof 类`
+>
+> **继承与组合**
+>
+> 继承是实现复用的重要手段，但继承会破坏封装。相比之下，组合也是实现类复用的重要方式，而采用组合方式来实现类复用则能提供更好的封装性。
+>
+> --end
+

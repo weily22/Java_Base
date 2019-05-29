@@ -2,6 +2,18 @@
   "configurations": [
     {
       "type": "java",
+      "name": "CodeLens (Launch) - SubClass",
+      "request": "launch",
+      "mainClass": "xiaomi.SubClass"
+    },
+    {
+      "type": "java",
+      "name": "CodeLens (Launch) - Wolf",
+      "request": "launch",
+      "mainClass": "xiaomi.Wolf"
+    },
+    {
+      "type": "java",
       "name": "CodeLens (Launch) - Apple",
       "request": "launch",
       "mainClass": "xiaomi.Apple"
