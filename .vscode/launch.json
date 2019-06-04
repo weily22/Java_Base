@@ -2,6 +2,30 @@
   "configurations": [
     {
       "type": "java",
+      "name": "CodeLens (Launch) - AutoBoxingUnboxing",
+      "request": "launch",
+      "mainClass": "xiaomi.AutoBoxingUnboxing"
+    },
+    {
+      "type": "java",
+      "name": "CodeLens (Launch) - Person",
+      "request": "launch",
+      "mainClass": "xiaomi.Person"
+    },
+    {
+      "type": "java",
+      "name": "CodeLens (Launch) - CompositeTest",
+      "request": "launch",
+      "mainClass": "xiaomi.CompositeTest"
+    },
+    {
+      "type": "java",
+      "name": "CodeLens (Launch) - Sub",
+      "request": "launch",
+      "mainClass": "xiaomi.Sub"
+    },
+    {
+      "type": "java",
       "name": "CodeLens (Launch) - SubClass",
       "request": "launch",
       "mainClass": "xiaomi.SubClass"
