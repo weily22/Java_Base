@@ -2,6 +2,42 @@
   "configurations": [
     {
       "type": "java",
+      "name": "CodeLens (Launch) - SingletonTest",
+      "request": "launch",
+      "mainClass": "SingletonTest"
+    },
+    {
+      "type": "java",
+      "name": "CodeLens (Launch) - ArraStringComparaTestyDemo",
+      "request": "launch",
+      "mainClass": "ArraStringComparaTestyDemo"
+    },
+    {
+      "type": "java",
+      "name": "CodeLens (Launch) - StringCompareTest",
+      "request": "launch",
+      "mainClass": "StringCompareTest"
+    },
+    {
+      "type": "java",
+      "name": "CodeLens (Launch) - Test",
+      "request": "launch",
+      "mainClass": "Test"
+    },
+    {
+      "type": "java",
+      "name": "CodeLens (Launch) - Test",
+      "request": "launch",
+      "mainClass": "xiaomi.Test"
+    },
+    {
+      "type": "java",
+      "name": "CodeLens (Launch) - test",
+      "request": "launch",
+      "mainClass": "xiaomi.test"
+    },
+    {
+      "type": "java",
       "name": "CodeLens (Launch) - AutoBoxingUnboxing",
       "request": "launch",
       "mainClass": "xiaomi.AutoBoxingUnboxing"
