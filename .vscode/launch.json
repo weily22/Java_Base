@@ -2,6 +2,12 @@
   "configurations": [
     {
       "type": "java",
+      "name": "CodeLens (Launch) - CacheImmutaleTest",
+      "request": "launch",
+      "mainClass": "CacheImmutaleTest"
+    },
+    {
+      "type": "java",
       "name": "CodeLens (Launch) - SingletonTest",
       "request": "launch",
       "mainClass": "SingletonTest"
