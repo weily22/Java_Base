@@ -2,6 +2,12 @@
   "configurations": [
     {
       "type": "java",
+      "name": "CodeLens (Launch) - Triangle",
+      "request": "launch",
+      "mainClass": "Triangle"
+    },
+    {
+      "type": "java",
       "name": "CodeLens (Launch) - CacheImmutaleTest",
       "request": "launch",
       "mainClass": "CacheImmutaleTest"
