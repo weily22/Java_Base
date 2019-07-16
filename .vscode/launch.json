@@ -2,6 +2,18 @@
   "configurations": [
     {
       "type": "java",
+      "name": "CodeLens (Launch) - Printer",
+      "request": "launch",
+      "mainClass": "Printer"
+    },
+    {
+      "type": "java",
+      "name": "CodeLens (Launch) - InterfaceExtendsTest",
+      "request": "launch",
+      "mainClass": "InterfaceExtendsTest"
+    },
+    {
+      "type": "java",
       "name": "CodeLens (Launch) - Triangle",
       "request": "launch",
       "mainClass": "Triangle"
